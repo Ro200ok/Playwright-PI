@@ -9,7 +9,7 @@ const http = require('http');
     const browser = await chromium.launch()
     const context = await browser.newContext()
     const page = await context.newPage()
-    await page.goto('https://mediapatriot.ru/partners/')
+    await page.goto('')
 
   
         
