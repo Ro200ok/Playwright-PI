@@ -13,7 +13,7 @@ const url = 'https://polit.info/';
 
 
 (async() => {
-    const browser = await chromium.launch({args: ['--start-maximized'], headless:true, slowMo:500})
+    const browser = await chromium.launch({args: ['--start-maximized'], headless:false, slowMo:500})
     const context = await browser.newContext({viewport: null})
     const page = await context.newPage()
    

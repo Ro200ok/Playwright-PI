@@ -84,7 +84,7 @@ const url = 'https://polit.info/';
      expect(currentTitle).toContain('Лента'); 
      expect(currentUrl).toContain('news')
   
-
+    
     
     await browser.close()
     

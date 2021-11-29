@@ -24,7 +24,7 @@ const url = 'https://polit.info/';
     },)
     const page = await context.newPage()
     await page.goto(url)
-    await page.screenshot({ path: 'screenshot.png', fullPage: true });
+    // await page.screenshot({ path: 'screenshot.png', fullPage: true });
     
     const sliderWidthNew = await page.$eval('.slider-block__slider', el => el.clientWidth)
     const sliderHeightNew = await page.$eval('.slider-block__slider', el => el.clientHeight)
