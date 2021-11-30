@@ -51,6 +51,10 @@ const url = 'https://polit.info/';
 
       console.log(headerWidth, headerHeight)
      
+     
+     
+     
+     
       if(sliderWidthNew === sliderWidth && sliderHeightNew === sliderHeight) {
           console.log('Ширина и высота слайдера одинаковые')
       } else {'Ширина и высота слайдера расходятся'}
