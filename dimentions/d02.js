@@ -1,5 +1,6 @@
+// Тест размеров блоков poit.info на ноутбуках (viewport: {width: 1280, height: 802})
 
-// Тест размеров блоков poit.info на больших мониторах (viewport: {width: 1920, height: 1080})
+
 
 
 
@@ -17,7 +18,7 @@ const urlNew = 'https://new.polit.info/';
     headless: true})
   
     const context = await browser.newContext()
-    const page = await browser.newPage({viewport: {width: 1920, height: 1080} });
+    const page = await browser.newPage({viewport: {width: 1280, height: 802} });
     const responce = await page.goto(url);
   
  
@@ -45,9 +46,6 @@ const urlNew = 'https://new.polit.info/';
 
   // Получаем размеры первой секции
 
-
- 
-
   const sectionFirstWidth = await page.$eval('.tiles-news-block', el => el.clientWidth)
   const sectionFirstHeight = await page.$eval('.tiles-news-block', el => el.clientHeight)
 
@@ -66,8 +64,6 @@ const urlNew = 'https://new.polit.info/';
   const thirdHeight = await page.$eval('.tiles-news-block:has-text("История")', el => el.clientHeight)
 
   console.log("Секция история прод", thirdWidth, thirdHeight)
-  
-
 
   
   // Получаем размеры четвертой секции
@@ -82,12 +78,10 @@ const urlNew = 'https://new.polit.info/';
   const footerWidth = await page.$eval('.footer-block', el => el.clientWidth)
   const footerHeight = await page.$eval('.footer-block', el => el.clientHeight)
 
-  console.log("Футер прод", forthWidth, forthHeigth, '\n')
-  
-  
-  
+  console.log("Футер прод", forthWidth, forthHeigth)
  
-  // Идем на дев
+ 
+  // Идем за размерами на дев
  
  
   for (const browserType2 of [chromium]) {
@@ -99,7 +93,7 @@ const urlNew = 'https://new.polit.info/';
       username: 'nginx',
       password: 'test',
     },
-    viewport: {width: 1920, height: 1080}
+    viewport: {width: 1280, height: 802}
   
   })
     const page2 = await context2.newPage();
@@ -161,7 +155,7 @@ const urlNew = 'https://new.polit.info/';
   const footerWidth2 = await page.$eval('.footer-block', el => el.clientWidth)
   const footerHeight2 = await page.$eval('.footer-block', el => el.clientHeight)
 
-  console.log("Футер дев", forthWidth2, forthHeigth2, '\n')
+  console.log("Футер дев", forthWidth2, forthHeigth2)
 
 
   // Сравниваем размеры
