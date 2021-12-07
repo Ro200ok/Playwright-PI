@@ -12,7 +12,7 @@ const urlNew = 'https://new.polit.info/';
 
 (async () => {
  
- for (const browserType of [chromium]) {
+ for (const browserType of [webkit]) {
   const browser = await browserType.launch({
     headless: true})
   
@@ -21,6 +21,12 @@ const urlNew = 'https://new.polit.info/';
     const responce = await page.goto(url);
   
  
+    // Получаем размеры хедера
+  
+ const headerWidth = await page.$eval('.header-content-block', el => el.clientWidth)
+ const headerHight = await page.$eval('.header-content-block', el => el.clientHeight)
+ 
+ console.log("Хедер прод", headerWidth, headerHight)
 
   // Получаем размеры блока слайдера
 
@@ -29,12 +35,7 @@ const urlNew = 'https://new.polit.info/';
   
   console.log("Слайдер прод", sliderWidth, sliderHight)
 
-  // Получаем размеры хедера
   
-  const headerWidth = await page.$eval('.header-content-block', el => el.clientWidth)
-  const headerHight = await page.$eval('.header-content-block', el => el.clientHeight)
-  
-  console.log("Хедер прод", headerWidth, headerHight)
 
   // Получаем размеры блока новостей
 
@@ -43,41 +44,57 @@ const urlNew = 'https://new.polit.info/';
   
   console.log("Блок новостей прод", newsWidth, newsHight)
 
+  
+  
   // Получаем размеры первой секции
 
 
  
 
-  const sectionFirstWidth = await page.$eval('.tiles-news-block', el => el.clientWidth)
-  const sectionFirstHeight = await page.$eval('.tiles-news-block', el => el.clientHeight)
+  const sectionFirstWidth = await page.$eval('//*[@id="main"]/article/div[2]/section[1]', el => el.clientWidth)
+  const sectionFirstHeight = await page.$eval('//*[@id="main"]/article/div[2]/section[1]', el => el.clientHeight)
 
   console.log("Секция один прод", sectionFirstWidth, sectionFirstHeight)
 
   // Получаем размеры второй секции
 
-  const sectionSecondWidth = await page.$eval('.tiles-list-news-block', el => el.clientWidth)
-  const sectionSecondHeight = await page.$eval('.tiles-list-news-block', el => el.clientHeight)
+  const sectionSecondWidth = await page.$eval('//*[@id="main"]/article/div[2]/section[2]', el => el.clientWidth)
+  const sectionSecondHeight = await page.$eval('//*[@id="main"]/article/div[2]/section[2]', el => el.clientHeight)
 
   console.log("Секция два прод", sectionSecondWidth, sectionSecondHeight)
 
-  // Получаем размеры третьей секции
+  // // Получаем размеры третьей секции
   
-  const thirdWidth = await page.$eval('.tiles-news-block:has-text("История")', el => el.clientWidth)
-  const thirdHeight = await page.$eval('.tiles-news-block:has-text("История")', el => el.clientHeight)
+  const thirdWidth = await page.$eval('//*[@id="main"]/article/div[2]/section[3]', el => el.clientWidth)
+  const thirdHeight = await page.$eval('//*[@id="main"]/article/div[2]/section[3]', el => el.clientHeight)
 
-  console.log("Секция история прод", thirdWidth, thirdHeight)
+  console.log("Секция три прод", thirdWidth, thirdHeight)
   
 
+  // // Получаем размеры четвертой секции
 
-  
-  // Получаем размеры четвертой секции
+  const forthWidth = await page.$eval('//*[@id="main"]/article/div[2]/section[4]', el => el.clientWidth)
+  const forthHeigth = await page.$eval('//*[@id="main"]/article/div[2]/section[4]', el => el.clientHeight)
 
-  const forthWidth = await page.$eval('.tiles-news-block:has-text("Все новости")', el => el.clientWidth)
-  const forthHeigth = await page.$eval('.tiles-news-block:has-text("Все новости")', el => el.clientHeight)
+  console.log("Секция четыре прод", forthWidth, forthHeigth)
 
-  console.log("Секция все новости прод", forthWidth, forthHeigth)
+  // Получаем размеры пятой секции
 
-  // Получаем размеры футера
+  const fithWidth = await page.$eval('//*[@id="main"]/article/div[2]/section[5]', el => el.clientWidth)
+  const fithHeigth = await page.$eval('//*[@id="main"]/article/div[2]/section[5]', el => el.clientHeight)
+
+  console.log("Секция пять прод", fithWidth, fithHeigth)
+
+  // Получаем размеры шестой секции
+
+  const sixWidth = await page.$eval('//*[@id="main"]/article/div[2]/section[6]', el => el.clientWidth)
+  const sixHeigth = await page.$eval('//*[@id="main"]/article/div[2]/section[6]', el => el.clientHeight)
+
+  console.log("Секция шесть прод", sixWidth, sixHeigth)
+
+
+
+  // // Получаем размеры футера
   
   const footerWidth = await page.$eval('.footer-block', el => el.clientWidth)
   const footerHeight = await page.$eval('.footer-block', el => el.clientHeight)
@@ -217,4 +234,10 @@ if(footerWidth === footerWidth2 && footerHeight === footerHeight2) {
 
  
  
+})();
+
+(async()=>{
+
+
+
 })();

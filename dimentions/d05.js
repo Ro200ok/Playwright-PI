@@ -4,28 +4,294 @@ const data = require('./dimentionsPi.js')
 
 const url = 'https://polit.info/';
 
+
+
+
+//1920, 1280, 1024, 414
+
+
 const blocksPi = {
    
-   
-    viewport1900x1600: {
+// vp1920x - viewport: 1920x1080 chromium
+// vp1280 -  viewport: 1280x720 chromium
+// vp1024 - viewport: 1024x1366 webkit ipad pro
+// vp360 - viewport: 360x640 firefox Galaxy s7
+    
+
+
+
         header: {
-            width: 1920,
-            height: 65
+            
+            vp1920: {
+                w: 1920,
+                h: 65
+            },
+
+            vp1280: {
+                w: 1280,
+                h: 65
+
+            },
+
+            vp1024: {
+                w: 1007,
+                h: 65
+
+            },
+
+            vp360: {
+                w: 360,
+                h: 65
+
+            },
+            
         },
-     
+
+
         slider: {
-         width: 752,
-         height: 567
+
+            vp1920: {
+                w: 752,
+                h: 567
+            },
+
+            vp1280: {
+                w: 733,
+                h: 567
+
+            },
+
+            vp1024: {
+                w: 977,
+                h: 554
+
+            },
+
+            vp360: {
+                w: 330,
+                h: 334
+
+            },
+            
+            
         },
      
         sidebar: {
-         width: 342,
-         height: 567
+
+            vp1920: {
+                w: 342,
+                h: 567
+            },
+            
+            vp1280: {
+                w: 333,
+                h: 567
+
+            },
+
+            vp1024: {
+                w: 977,
+                h: 388
+
+            },
+
+            vp360: {
+                w: 330,
+                h: 388
+
+            },
+         
+        },
+     
+        section1: {
+
+            vp1920: {
+                w: 1140,
+                h: 427
+            },
+
+            vp1280: {
+                w: 1110,
+                h: 427
+
+            },
+
+            vp1024: {
+                w: 977,
+                h: 427
+
+            },
+
+            vp360: {
+                w: 302,
+                h: 1451
+
+            },
+         
+         
         },
 
-    } 
+        section2: {
+
+            vp1920: {
+                w: 1140,
+                h: 782
+            },
+
+            vp1280: {
+                w: 1110,
+                h: 782
+
+            },
+
+            vp1024: {
+                w: 977,
+                h: 782
+
+            },
+
+            
+            vp360: {
+                w: 302,
+                h: 2204
+
+            },
+         
+        },
         
-      
+        section3: {
+
+            vp1920: {
+                w: 1140,
+                h: 427
+            },
+
+            vp1280: {
+                w: 1110,
+                h: 427
+
+            },
+
+            vp1024: {
+                w: 977,
+                h: 427
+
+            },
+
+            vp360: {
+                w: 302,
+                h: 1471
+
+            },
+         
+         
+        },
+
+        section4: {
+            vp1920: {
+                w: 1140,
+                h: 782
+            },
+
+            vp1280: {
+                w: 1110,
+                h: 782
+
+            },
+
+            vp1024: {
+                w: 977,
+                h: 782
+
+            },
+
+            vp360: {
+                w: 302,
+                h: 2204
+
+            },
+         
+        },
+
+        section5: {
+            vp1920: {
+                w: 1140,
+                h: 428
+            },
+
+            vp1280: {
+                w: 1110,
+                h: 428
+
+            },
+
+            vp1024: {
+                w: 977,
+                h: 427
+
+            },
+
+            vp360: {
+                w: 302,
+                h: 1465
+
+            },
+
+
+        },
+
+        section6: {
+            vp1920: {
+                w: 1140,
+                h: 782
+            },
+
+            vp1280: {
+                w: 1110,
+                h: 782
+
+            },
+
+            vp1024: {
+                w: 977,
+                h: 782
+
+            },
+
+            vp360: {
+                w: 302,
+                h: 2204
+
+            },
+         
+        },
+
+        footer: {
+            vp1920: {
+                w: 1140,
+                h: 782
+            },
+
+            vp1280: {
+                w: 1110,
+                h: 782
+
+            },
+
+            vp1024: {
+                w: 977,
+                h: 782
+
+            },
+
+            vp360: {
+                w: 302,
+                h: 2204
+
+            },
+         
+        },
+
  
     
  
@@ -34,7 +300,6 @@ const blocksPi = {
  
  
 };
- 
  
 
 
@@ -45,10 +310,16 @@ const blocksPi = {
    
     await page.goto(url)
 
-    console.log(blocksPi.viewport1900x1600.slider)
+    // if(blocksPi.viewport_1900.sidebar.width === blocksPi2.viewport_1900.sidebar.w) {
+    //     console.log('true')
+    // }
+    // console.log(blocksPi2.viewport_1900.slider.h)
+    
+    
+    
+    const keys = Object.keys(blocksPi2);
 
- 
-
+   
     
 
 

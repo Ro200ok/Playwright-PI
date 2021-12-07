@@ -18,7 +18,7 @@ const urlNew = 'https://new.polit.info/';
     headless: true})
   
     const context = await browser.newContext()
-    const page = await browser.newPage({viewport: {width: 1280, height: 802} });
+    const page = await browser.newPage({viewport: {width: 1280, height: 720} });
     const responce = await page.goto(url);
   
  

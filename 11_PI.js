@@ -5,6 +5,7 @@
 
 const {chromium} = require('playwright');
 const expect = require('expect');
+const axios = require('axios');
 
 
 
@@ -19,32 +20,23 @@ const url = 'https://polit.info/';
    
     await page.goto(url)
 
+//     axios.get(url)
+//   .then(function (response) {
     
-    await page.waitForTimeout(1000)
+//     console.log(response.data);
+//     // console.log(response.statusText);
+//     // console.log(response.headers);
+//     // console.log(response.json());
+//   });
 
 
-   
+        const icon = await page.$eval('//*[@id="app"]/footer/div[1]/div[1]/div', el => el.innerHTML)
+        // expect(icon).toMatch('18+!');
+        console.log(await icon) 
 
 
-//   const allUrls = await Promise.all (links.map(async(link, i) => {
-//         return await link.innerText()
-//     }))
-//     console.log(allUrls)
-   
-   
-    // const mass = await links.map(link => {
-        
-    //     console.log(link.innerText())
-    // })
     
-    const links = await page.locator('a')
-
-    let c = await links.count
-    for (let i = 0; i < c; i++) {
-        let text = await links.nth(i).textContent();
-        console.log(text)
-    }
-
+    
     
    
    
